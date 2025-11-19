@@ -11,7 +11,7 @@ body {
   line-height: 1.6;
 
   /* New gradient background */
-  background: linear-gradient(45deg, #3498db, #2ecc71);
+ background: linear-gradient(45deg, #1f4f7a, #1e7a49);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
