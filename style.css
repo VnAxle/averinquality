@@ -111,11 +111,6 @@ body {
   margin-top: 1.5rem;
 }
 
-/* Last card stands alone on bottom, centered */
-.flipcard-grid .flipcard:last-child {
-  grid-column: 1 / -1;
-}
-
 /* Flipcard base */
 .flipcard {
   perspective: 1000px;
@@ -307,9 +302,4 @@ body {
   .flipcard-grid {
     grid-template-columns: 1fr;
   }
-
-  .flipcard-grid .flipcard:last-child {
-    grid-column: auto;
-  }
 }
-
