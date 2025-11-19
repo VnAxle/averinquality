@@ -119,8 +119,8 @@ body {
 /* Flipcard base */
 .flipcard {
   perspective: 1000px;
-  width: 190px;
-  height: 254px;
+  width: 300px;
+  height: 400px;
 }
 
 /* From Uiverse.io by ElSombrero2 - adapted */
@@ -158,8 +158,8 @@ body {
   position: absolute;
   content: "";
   display: block;
-  width: 160px;
-  height: 160%;
+  width: 300px;
+  height: 400%;
   background: linear-gradient(
     90deg,
     transparent,
