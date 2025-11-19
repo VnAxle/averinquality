@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* GRID BACKGROUND */
 body {
   font-family: Arial, sans-serif;
   color: #f9fafb;
@@ -11,7 +12,7 @@ body {
 
   --color: rgba(114, 114, 114, 0.3);
   background-color: #191a1a;
-  background-image: 
+  background-image:
     linear-gradient(0deg,
       transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,
       transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
@@ -20,7 +21,6 @@ body {
       transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
   background-size: 55px 55px;
 }
-
 
 .container {
   max-width: 900px;
@@ -113,25 +113,22 @@ body {
   color: #6b7280;
 }
 
-/* Flipcards profile thingy------------------------------------------------------*/
+/* FLIPCARD GRID ------------------------------------------------------ */
 .flipcard-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  justify-items: stretch;   /* fill the row, no stupid gap */
   margin-top: 1.5rem;
 }
 
 /* Flipcard base */
 .flipcard {
   perspective: 1000px;
-  width: 100%;              /* take full column width */
-  max-width: 420px;         /* do not get too huge on big screens */
+  width: 100%;
   height: 360px;
-  margin: 0 auto;           /* center card inside column */
 }
 
-/* From Uiverse.io by ElSombrero2 - adapted */
+/* Uiverse flipcard adapted */
 .flipcard-content {
   position: relative;
   width: 100%;
