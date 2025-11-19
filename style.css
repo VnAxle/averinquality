@@ -112,6 +112,25 @@ body {
   font-size: 0.85rem;
   color: #6b7280;
 }
+/* Glass effect for About section */
+.glass-about {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+
+  transition: 0.3s ease;
+}
+
+.glass-about:hover {
+  box-shadow: 0 0 25px rgba(255, 187, 118, 0.35);
+  border-color: rgba(255, 255, 255, 0.40);
+  transform: translateY(-2px);
+}
 
 
 /* Glass "Profile Highlights" section --------------------------------------- */
