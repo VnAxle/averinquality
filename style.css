@@ -4,44 +4,50 @@
   box-sizing: border-box;
 }
 
-/* GRID BACKGROUND */
+/* PAGE BACKGROUND -------------------------------------------------------- */
 body {
   font-family: Arial, sans-serif;
   color: #f9fafb;
   line-height: 1.6;
 
-  /* New gradient background */
- background: linear-gradient(45deg, #266396, #238d58);
-
-
+  /* Gradient background */
+  background: linear-gradient(45deg, #266396, #238d58);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Pattern overlay on entire page */
+/* Grid pattern overlay */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-image:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
   pointer-events: none;
   z-index: -1;
 }
 
-
+/* LAYOUT ------------------------------------------------------------------ */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1.2rem;
 }
 
+.section {
+  padding: 3rem 0;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #0f172a;
+}
+
+/* HERO -------------------------------------------------------------------- */
 .hero {
   background: #0f172a;
   color: white;
@@ -85,48 +91,7 @@ body::before {
   color: white;
 }
 
-.section {
-  padding: 3rem 0;
-}
-
-.section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #0f172a;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: white;
-  padding: 1.2rem;
-  border-radius: 0.6rem;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  margin-bottom: 1rem;
-}
-
-.card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.4rem;
-}
-
-.meta {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-bottom: 0.7rem;
-}
-
-.footer {
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-/* Glass effect for About section */
+/* ABOUT GLASS PANEL ------------------------------------------------------ */
 .glass-about {
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.074);
@@ -136,7 +101,6 @@ body::before {
   border-radius: 0.7rem;
   margin-top: 2rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-
   transition: 0.3s ease;
 }
 
@@ -146,9 +110,7 @@ body::before {
   transform: translateY(-2px);
 }
 
-
-/* Glass "Profile Highlights" section --------------------------------------- */
-
+/* GLASS PROFILE HIGHLIGHTS ----------------------------------------------- */
 .glass-wrapper {
   position: relative;
   color: #f9fafb;
@@ -183,7 +145,7 @@ body::before {
   color: #f9fafb;
 }
 
-/* Grid of 4 cards: 2 top, 2 bottom */
+/* Grid of 4 glass cards: 2 top, 2 bottom */
 .glass-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -191,10 +153,9 @@ body::before {
   margin-top: 1.5rem;
 }
 
-/* Glass card */
 .glass-card {
   width: 100%;
-  max-width: 380px;   /* ≈2/5 page inside 900px container */
+  max-width: 380px;
   min-height: 220px;
   margin: 0 auto;
 
@@ -218,9 +179,115 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* Stack on mobile */
+/* SKILLS SECTION - BIG GRADIENT SHELL + SMALL GLASS BOXES ---------------- */
+#skills h2 {
+  color: #f9fafb;
+}
+
+/* Big gradient shell for Skills section */
+.skills-shell {
+  width: 100%;
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  padding: 2rem;
+  border-radius: 10px;
+
+  background: radial-gradient(ellipse farthest-side at 76% 77%, rgba(245, 228, 212, 0.25) 4%, rgba(255, 255, 255, 0) calc(4% + 1px)),
+              radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
+              linear-gradient(135deg, #ff0000 0%, #000036 100%),
+              radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
+              linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
+  background-blend-mode: normal, normal, screen, overlay, normal;
+
+  box-shadow: 0px 0px 10px 1px #000000;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-glass {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0.7rem;
+  padding: 1.2rem;
+  color: #f9fafb;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skills-glass h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.skills-glass ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.skills-glass ul li {
+  margin-bottom: 0.25rem;
+}
+
+/* EXPERIENCE CARDS -------------------------------------------------------- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.7rem;
+}
+
+/* FOOTER ------------------------------------------------------------------ */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+/* RESPONSIVE ------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 700px) {
   .glass-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 }
